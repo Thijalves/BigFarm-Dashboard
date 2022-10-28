@@ -1,5 +1,7 @@
 const apiUrl = "https://labradorserver.herokuapp.com";
 
+setTimeout("location.reload(true);", 10000);
+
 async function update() {
   const response = await fetch(apiUrl + "/latestTelemetry");
 
