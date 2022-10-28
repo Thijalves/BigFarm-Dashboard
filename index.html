@@ -7,8 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="./script.js"></script>
 </head>
-<body>
+<body onload="update()">
 	<section class="main-content">
 		<div class="container">
 			<h1 class="text-center text-uppercase">DataFarm - Dashboard</h1>
@@ -18,7 +19,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">UVA</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="UVAValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -30,7 +31,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">UVB</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="UVBValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -42,7 +43,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">UVI</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="UVIValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -54,7 +55,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">CO2</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="CO2Value"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -66,7 +67,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">TVOC</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="TVOCValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -78,7 +79,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">Temp. Ar</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="airTempValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -90,7 +91,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">umid. ar</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="airHumValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -102,7 +103,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">pressão</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="pressureValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -114,7 +115,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">ph</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="phValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -126,7 +127,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">Temp. Solo</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="soilTempValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
@@ -138,7 +139,7 @@
 				<div class="stat-card">
 					<div class="stat-card__content">
 						<p class="text-uppercase mb-1 text-muted">umid. Solo</p>
-						<h2><i class="fa "></i> 0,00</h2>
+						<h2 id="soilHumValue"><i class="fa "></i> Loading...</h2>
 						<div></div>
 					</div>
 					<div class="stat-card__icon stat-card__icon--success">
