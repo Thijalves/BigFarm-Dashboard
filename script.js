@@ -1,12 +1,12 @@
 const apiUrl = "https://labradorserver.herokuapp.com";
 
-setTimeout("location.reload(true);", 10000);
+// setTimeout("location.reload(true);", 10000);
 
 async function update() {
   const response = await fetch(apiUrl + "/latestTelemetry");
 
   var data = await response.json();
-  console.log(data);
+  //   console.log(data);
 
   document.getElementById("UVAValue").innerHTML = data[0].UVA;
   document.getElementById("UVBValue").innerHTML = data[0].UVB;
