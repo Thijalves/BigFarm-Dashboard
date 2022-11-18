@@ -11,7 +11,7 @@ body {
 
 .teleGrid {
   display: grid;
-  grid-template-areas: "a b c d" "a b c d" "a b c d";
+  grid-template-areas: "a b c" "a b c" "a b c";
 }
 
 .chart_title {
