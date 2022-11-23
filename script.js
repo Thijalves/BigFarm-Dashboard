@@ -42,12 +42,14 @@ async function update() {
   const tempResponse = await fetch(apiUrl + "/chartData/temperature/11");
   const pHResponse = await fetch(apiUrl + "/chartData/pH/11");
   const humiResponse = await fetch(apiUrl + "/chartData/humidity/11");
+  const soilHumiResponse = await fetch(apiUrl + "/chartData/soilHumidity/11");
 
   //convert data
   var telemetryData = await telemetrResponse.json();
   var tempData = await tempResponse.json();
   var pHData = await pHResponse.json();
   var humiData = await humiResponse.json();
+  var soilHumData = await soilHumiResponse.json();
 
   //update telemetry table
   document.getElementById("UVAValue").innerHTML = telemetryData[0].UVA;
@@ -75,10 +77,17 @@ async function update() {
     yValues[i] = humiData[i].humidity;
   makeChart(humidity,xValues, yValues, yValuesPred, 0, 100);
 
+  var yValuesPred = [,,,,,,,foreData[0].soilHumForecast,foreData[1].soilHumForecast,foreData[2].soilHumForecast, foreData[3].soilHumForecast];
+  //humidity graph
+  for(let i = 0; i < 8; i++)
+    yValues[i] = soilHumData[i].soilHumidity;
+  makeChart(soilHumidity,xValues, yValues, yValuesPred, 0, 100);
 
-  // //temperature graph
-  // for(let i = 0; i < 11; i++)
-  //   yValues[i] = tempData[i].temperature;
-  // makeChart(temperature,xValues, yValues, 0, 60);
+  valoresTemp = []
+  //temperature graph
+  for(let i = 0; i < 11; i++)
+    yValues[i] = tempData[i].temperature;
+    // yValuesPred[i] = 0
+  makeChart(temperature,xValues, yValues,valoresTemp, 0, 80);
 
 }
